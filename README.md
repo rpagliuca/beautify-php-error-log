@@ -1,0 +1,1 @@
+# beautify-php-error-log
