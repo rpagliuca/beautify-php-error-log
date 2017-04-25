@@ -36,12 +36,15 @@
     $C_WHITE = color(0);
     $C_BLUE = color(34);
     $C_GREEN = color(36);
+    $C_GREEN2 = color(32);
     $C_YELLOW = color(33);
+    $C_RED = color(31);
     $SPACE = "    ";
 
     $input = preg_replace('/\n(\[[A-Z][a-z][a-z] .*\[client [0-9:.]+\])/', "\n\n$C_WHITE-----\n\n$C_BLUE" . '\1' . "$C_YELLOW", $string);
     $input = preg_replace('/\n(#[0-9]+ )/', "\n" . "$C_GREEN$SPACE" . '\1', $input);
     $input = preg_replace('/\n(referer:.*)/', "\n$C_BLUE" . '\1', $input);
+    $input = preg_replace('/([^\/]+.php)/', "$C_GREEN2" . '\1' . "$C_GREEN", $input);
     $input = str_replace('\n', '', $input);
 
     return $input;
